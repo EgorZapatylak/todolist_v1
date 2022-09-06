@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from "./Todolist";
 
+export type filterValueType = "all" | "active" | "completed" ;
 function App() {
 
     let [tasks, setTasks]  = useState( [
@@ -19,7 +20,7 @@ function App() {
     //     {id: 4, title: "Bombox", isDone: false},
     // ]
 
-    let [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+    let [filter, setFilter] = useState<filterValueType>("all");
 
     let tasksForTodolist = tasks;
 
