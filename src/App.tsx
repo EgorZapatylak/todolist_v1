@@ -19,6 +19,17 @@ function App() {
     //     {id: 4, title: "Bombox", isDone: false},
     // ]
 
+    let [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+
+    let tasksForTodolist = tasks;
+
+    if (filter === "active") {
+        tasksForTodolist = tasks.filter(tasks => tasks.isDone === false)
+    }
+    if (filter === "completed") {
+        tasksForTodolist = tasks.filter(tasks => tasks.isDone === true)
+    }
+
     function removeTask(id: number) {
         let filteredTasks = tasks.filter(tasks => tasks.id !== id)
         setTasks(filteredTasks)
@@ -27,7 +38,7 @@ function App() {
     return (
         <div className="App">
             <Todolist title="What to learn"
-                      tasks={tasks}
+                      tasks={tasksForTodolist}
                       removeTask={removeTask}
             />
             {/*<Todolist title = "Songs" tasks = {tasks2} />*/}
