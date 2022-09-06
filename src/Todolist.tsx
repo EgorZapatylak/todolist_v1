@@ -3,6 +3,7 @@ import React from "react";
 type PropsType = {
     title: string,
     tasks: Array<TaskType>
+    removeTask: (taskId: number) => void
 }
 
 type TaskType = {
@@ -23,7 +24,7 @@ export function Todolist(props: PropsType) {
                 {props.tasks.map((el) =>
                     <li key={el.id}><input type="checkbox" checked={el.isDone}  />
                         <span> {el.title} </span>
-                        <button onClick={()=> {alert(el.id)}}> X </button>
+                        <button onClick={()=> {props.removeTask(el.id)}}> X </button>
                     </li>
                 )}
             </ul>
