@@ -19,6 +19,11 @@ function App() {
     //     {id: 4, title: "Bombox", isDone: false},
     // ]
 
+    function removeTask(id: number) {
+        tasks1 = tasks1.filter(task => task.id !== id)
+        console.log(tasks1)
+    }
+
     return (
         <div className="App">
             <Todolist title = "What to learn" tasks = {tasks1}/>
