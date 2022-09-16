@@ -36,7 +36,7 @@ function App() {
         setFilter(value)
     }
 
-    function removeTask(id: number) {
+    function removeTask(id: string) {
         let filteredTasks = tasks.filter(tasks => tasks.id !== id)
         setTasks(filteredTasks)
     }
