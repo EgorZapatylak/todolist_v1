@@ -4,12 +4,12 @@ import {filterValueType} from "./App";
 type PropsType = {
     title: string,
     tasks: Array<TaskType>
-    removeTask: (taskId: number) => void
+    removeTask: (taskId: string) => void
     changeFilter: (value: filterValueType) => void
 }
 
 type TaskType = {
-    id: number,
+    id: string,
     title: string,
     isDone: boolean
 }
