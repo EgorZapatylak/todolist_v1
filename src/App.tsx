@@ -41,6 +41,12 @@ function App() {
         setTasks(filteredTasks)
     }
 
+    function addTask() {
+        let task = {id: v1(), title: "New Task", isDone: false};
+        let newTasks = [task, ...tasks];
+        setTasks(newTasks);
+    }
+
     return (
         <div className="App">
             <Todolist title="What to learn"
