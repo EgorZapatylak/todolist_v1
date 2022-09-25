@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {filterValueType} from "./App";
 
 type PropsType = {
@@ -16,6 +16,7 @@ type TaskType = {
 }
 
 export function Todolist(props: PropsType) {
+    let [title, setTitle] = useState('');
     return (
         <div>
             <h3>{props.title}</h3>
