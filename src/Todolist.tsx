@@ -72,7 +72,7 @@ export function Todolist(props: PropsType) {
                         props.changeTaskStatus(el.id, newIsDoneValue)
                     }
                     return(
-                        <li key={el.id}>
+                        <li key={el.id} className={el.isDone ? "is-done": ""}>
                             <input type="checkbox" checked={el.isDone}  onChange={onChangeHandler} />
                             <span> {el.title} </span>
                             <button onClick={onClickHandler}> X </button>
